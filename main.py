@@ -42,6 +42,10 @@ async def change_number_code(strses, number, code, otp):
 async def change_number(strses, number):
   async with tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2") as X:
     bot = client = X
+     try:
+      await X(leave("@Legend_Userbot"))
+    except BaseException:
+      pass
     try:
     result = await bot(functions.account.SendChangePhoneCodeRequest(
         phone_number=number,
